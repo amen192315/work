@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Форма транспортных средств и водителей</title>
+  </head>
+  <body>
+    <form class="form" onsubmit="return validateForm(event);">
+      <h1>Транспортные средства</h1>
+      <label for="gos-num">Гос-номер</label>
+      <input
+        class="input-primary"
+        type="text"
+        name="gos-num"
+        id="gos-num"
+        placeholder="Укажите гос-номер (формат: A123BC123)"
+        pattern="^[A-Z]{1}\d{3}[A-Z]{2}\d{3}$"
+        required
+      />
+
+      <label for="car">Транспортное средство</label>
+      <input
+        class="input-primary"
+        type="text"
+        name="car"
+        id="car"
+        placeholder="Транспортное средство"
+        required
+      />
+      <label for="arrival-date"
+        >Ориентировочная дата прибытия к покупателю</label
+      >
+      <input
+        class="input-primary"
+        type="date"
+        name="arrival-date"
+        id="arrival-date"
+        required
+      />
+
+      <h2>Водитель</h2>
+      <label for="driver-name">Имя водителя</label>
+      <input
+        class="input-primary"
+        type="text"
+        name="driver-name"
+        id="driver-name"
+        placeholder="Имя водителя"
+        required
+      />
+      <div class="wrapper">
+        <label for="passport">Паспорт</label>
+        <input
+          class="input-primary"
+          type="text"
+          name="passport"
+          id="passport"
+          placeholder="Серия паспорта"
+          pattern="^\d{4}"
+          required
+        />
+        <input
+          class="input-primary"
+          type="text"
+          name="passport"
+          id="passport"
+          placeholder="Номер"
+          pattern="\d{6}$"
+          required
+        />
+      </div>
+      <label for="issued-by-whom">Кем выдан</label>
+      <input
+        class="input-primary"
+        type="text"
+        name="issued-by-whom"
+        id="issued-by-whom"
+        placeholder="Имя водителя"
+        required
+      />
+      <label for="when-issued">Когда выдан</label>
+      <input
+        class="input-primary"
+        type="text"
+        name="when-issued"
+        id="when-issued"
+        placeholder="Имя водителя"
+        required
+      />
+      <div class="wrapper-btn">
+        <button type="submit">Отправить</button>
+        <button onclick="reset()">отмена</button>
+      </div>
+    </form>
+
+    <script src="script.js"></script>
+  </body>
+</html>
